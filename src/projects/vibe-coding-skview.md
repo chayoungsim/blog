@@ -18,3 +18,6 @@ React 프로젝트를 Claude Code AI를 활용해서 바이브 코딩으로 만�
 
 ## 느낀 점
 AI가 코드를 빠르게 만들어주긴 하지만, 결과물이 의도한 대로인지 확인하고 필요하면 직접 고치는 몫은 여전히 남는다는 걸 체감했다.
+
+
+- C:\frontend-lab\react\v-view-react
