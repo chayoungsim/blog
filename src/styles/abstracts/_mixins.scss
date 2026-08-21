@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'variables' as *;
 
 // ─────────────────────────────────────────────
@@ -202,12 +203,22 @@
   background-size: 100% $height;
 }
 
-// 반응형 제목 축약
-// 사용: @include heading-fluid(3.2rem, 5.6rem)
-@mixin heading-fluid($min, $max) {
-  font-size: clamp($min, 4vw, $max);
-  line-height: 1.2;
-  font-weight: 700;
+// 유동 텍스트 크기 — $min-vw~$max-vw 뷰포트 구간에서 $min-size~$max-size 사이를
+// 선형으로 보간하고, 그 구간 밖에서는 각각 min/max 값으로 고정한다(clamp).
+// 크기 값은 rem(1rem = 10px 기준), 뷰포트 값은 px으로 받는다.
+// 사용: @include fluid-text($text-lg, $text-xl)                    → 기본 375px~1280px 구간
+//      @include fluid-text(3.2rem, 5.6rem, 480px, 1024px)          → 구간 직접 지정
+@mixin fluid-text($min-size, $max-size, $min-vw: 375px, $max-vw: 1280px) {
+  $min-px: math.div($min-size, 1rem) * 10;
+  $max-px: math.div($max-size, 1rem) * 10;
+  $min-vw-num: math.div($min-vw, 1px);
+  $max-vw-num: math.div($max-vw, 1px);
+
+  $slope: math.div($max-px - $min-px, $max-vw-num - $min-vw-num);
+  $intercept-rem: math.div($min-px - $slope * $min-vw-num, 10);
+  $vw-coefficient: $slope * 100;
+
+  font-size: clamp(#{$min-size}, #{$intercept-rem}rem + #{$vw-coefficient}vw, #{$max-size});
 }
 
 // ─────────────────────────────────────────────

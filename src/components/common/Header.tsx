@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { NavLink } from "react-router-dom"
 import ButtonMode from "@/components/ui/ButtonMode"
+import logo from "@/assets/images/chayoungsim-tech.svg"
 
 const NAV_ITEMS = [
   { to: "/", label: "Home", end: true },
@@ -41,7 +42,7 @@ const Header = () => {
     <header ref={headerRef} id="header">
       <div className="static header-inner">
         <NavLink to="/" end className="header-logo" aria-label="홈으로 이동" onClick={closeMenu}>
-          My Blog
+          <img src={logo} alt="" />
         </NavLink>
 
         <div className="header-actions">

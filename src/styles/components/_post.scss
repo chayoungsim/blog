@@ -83,7 +83,7 @@
 .post-card-title {
   order: 3;
   flex: 1 1 100%;
-  font-size: var(--text-xl);
+  @include fluid-text($text-lg, $text-xl);
 }
 
 .post-card-description {

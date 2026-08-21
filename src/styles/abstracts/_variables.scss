@@ -104,3 +104,5 @@ $shadow-hover: 0 16px 40px rgba(0, 102, 255, 0.16);
 // public/ 폴더 기준 절대경로. mask url()이 동적 파일명을 조합하므로
 // Vite가 빌드타임에 정적분석할 수 없어 public에 두고 절대경로로 참조한다.
 $url-imgs: '/assets/';
+
+

@@ -18,9 +18,13 @@
 }
 
 .header-logo {
-  font-family: var(--font-en);
-  font-size: var(--text-lg);
-  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 4.6rem;
+    width: auto;
+  }
 }
 
 .header-actions {
