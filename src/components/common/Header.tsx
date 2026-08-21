@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { NavLink } from "react-router-dom"
+import ButtonMode from "@/components/ui/ButtonMode"
 
 const NAV_ITEMS = [
   { to: "/", label: "Home", end: true },
@@ -43,30 +44,34 @@ const Header = () => {
           My Blog
         </NavLink>
 
-        <button
-          type="button"
-          className="menu-toggle"
-          aria-expanded={isOpen}
-          aria-controls="primary-nav"
-          aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </button>
+        <div className="header-actions">
+          <nav id="primary-nav" aria-label="주요 메뉴" className={isOpen ? "is-visible" : undefined}>
+            <ul>
+              {NAV_ITEMS.map(({ to, label, end }) => (
+                <li key={to}>
+                  <NavLink to={to} end={end} onClick={closeMenu}>
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <nav id="primary-nav" aria-label="주요 메뉴" className={isOpen ? "is-visible" : undefined}>
-          <ul>
-            {NAV_ITEMS.map(({ to, label, end }) => (
-              <li key={to}>
-                <NavLink to={to} end={end} onClick={closeMenu}>
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <ButtonMode />
+
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={isOpen}
+            aria-controls="primary-nav"
+            aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
+        </div>
       </div>
     </header>
   )

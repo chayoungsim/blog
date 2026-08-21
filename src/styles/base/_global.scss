@@ -27,17 +27,20 @@ html {
   // scrollbar-gutter는 전파되지 않음) 여기서도 공간을 항상 확보해야
   // 모달/aside 오픈 시 body.overflow=hidden으로 스크롤바가 사라져도
   // 뷰포트 폭이 바뀌지 않아 좌우 흔들림이 생기지 않습니다.
-  scrollbar-gutter: stable;
+  //scrollbar-gutter: stable;
 }
 
 body {
   font-family: var(--font-family-base);
   font-size: 1.6rem; // Sets default font size to 16px
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-color: var(--color-surface);
   @include custom-scrollbar;
   overflow-x: hidden;
   letter-spacing: -.03em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -83,4 +86,14 @@ a {
       object-fit: cover;
       z-index: 0;
     }  
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: rgba(0,0,0,.1)
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2);
+  border-radius: 4px
 }

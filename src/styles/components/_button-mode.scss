@@ -1,0 +1,34 @@
+@use '@/styles/abstracts' as *;
+
+.btn-toggle-mode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-border);
+  }
+}
+
+.mode-icon {
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}

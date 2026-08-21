@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import Markdown from "react-markdown"
 import { useDocumentMeta } from "@/hooks/useDocumentMeta"
 import type { Post } from "@/types/post"
@@ -13,6 +13,9 @@ const PostDetail = () => {
 
   return (
     <article className="static post-detail">
+      <Link to="/posts" className="post-detail-back">
+        ← 글 목록으로
+      </Link>
       <header className="post-detail-header">
         <span className="post-card-category">{post.category}</span>
         <h1>{post.title}</h1>
@@ -21,6 +24,9 @@ const PostDetail = () => {
       <div className="post-detail-content">
         <Markdown>{post.content}</Markdown>
       </div>
+      <Link to="/posts" className="post-detail-back">
+        ← 글 목록으로
+      </Link>
     </article>
   )
 }

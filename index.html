@@ -2,6 +2,20 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // React가 마운트되기 전, 첫 페인트 시점에 테마를 미리 적용해 깜빡임(FOUC)을 막는다.
+      // src/hooks/useTheme.ts의 초기값 계산 로직과 반드시 동일하게 유지해야 한다.
+      (function () {
+        var stored = localStorage.getItem('theme')
+        var theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a192f" />
