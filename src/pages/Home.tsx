@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import HadaNewsList from "@/components/home/HadaNewsList"
 import { useDocumentMeta } from "@/hooks/useDocumentMeta"
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <p>
         <Link to="/posts">글 목록 보러가기</Link>
       </p>
+      <HadaNewsList />
     </section>
   )
 }

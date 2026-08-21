@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-sitemap.mjs",
+    "fetch:news": "node scripts/fetch-hada-news.mjs",
+    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/fetch-hada-news.mjs",
     "build": "tsc -b && vite build",
     "postbuild": "node scripts/copy-404.mjs",
     "lint": "eslint .",

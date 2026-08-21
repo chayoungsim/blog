@@ -32,8 +32,8 @@
 
     &[aria-current='page'] {
       color: var(--color-white);
-      background-color: var(--color-primary);
-      border-color: var(--color-primary);
+      background-color: var(--color-secondary);
+      border-color: var(--color-secondary);
     }
   }
 }
@@ -56,8 +56,7 @@
   column-gap: $space-3;
   row-gap: $space-2;
   padding: $space-5 $space-3;
-  border-bottom: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-bottom: 1px solid var(--color-border);  
   transition: background-color 0.2s ease;
 
   &:hover,
@@ -73,26 +72,25 @@
 }
 
 .post-card-category {
-  order: 2;
-  padding: $space-1 $space-3;
-  font-size: var(--text-xs);
+  order: 2;  
+  font-size: var(--text-base);
   font-weight: var(--font-weight-medium);
-  color: var(--color-white);
-  background-color: var(--color-secondary);
-  border-radius: var(--radius-sm);
+  color: var(--color-secondary);
+  margin-left: $space-5;
+  
 }
 
 .post-card-title {
   order: 3;
   flex: 1 1 100%;
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
 }
 
 .post-card-description {
   order: 4;
   flex: 1 1 100%;
   color: var(--color-text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   @include ellipsis-multi(1);
 }
 
@@ -101,37 +99,47 @@
 // ─────────────────────────────────────────────
 
 .post-detail-back {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  margin-bottom: $space-5;
-  padding: $space-1 $space-4;
-  font-size: var(--text-sm);
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto $space-5;
+  padding: $space-2 $space-6;
+  font-size: var(--text-lg);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   transition: color 0.2s ease, background-color 0.2s ease;
 
   &:hover,
   &:focus-visible {
-    color: var(--color-text);
-    background-color: var(--color-border);
+    color: var(--color-surface);
+    background-color: var(--color-secondary);
   }
 
   & + .post-detail-header {
     margin-top: 0;
+    
   }
 }
 
 .post-detail-content + .post-detail-back {
   margin-top: $space-6;
   margin-bottom: 0;
+  
+}
+
+.post-detail-content {
+    h2 {
+        margin: $space-8 0 $space-4;
+    }
 }
 
 .post-detail-header {
   margin-bottom: $space-6;
-
+  background-color: var(--color-surface);
   h1 {
     margin: $space-3 0;
   }
@@ -143,19 +151,20 @@
 }
 
 .post-detail-content {
-  max-width: 72ch;
+  max-width: 100%;
 
   pre {
     padding: $space-4;
     margin-bottom: $space-4;
-    overflow-x: auto;
-    background-color: var(--color-gray-900);
+    overflow-x: auto;    
+    background-color: #272822;
     border-radius: var(--radius-md);
+    
   }
 
   pre code {
     padding: 0;
-    color: var(--color-gray-100);
+    color: #f8f8f2;
     background: none;
   }
 

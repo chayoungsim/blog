@@ -38,7 +38,7 @@ const Header = () => {
   }, [isOpen])
 
   return (
-    <header ref={headerRef}>
+    <header ref={headerRef} id="header">
       <div className="static header-inner">
         <NavLink to="/" end className="header-logo" aria-label="홈으로 이동" onClick={closeMenu}>
           My Blog

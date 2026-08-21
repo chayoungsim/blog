@@ -1,0 +1,57 @@
+@use '@/styles/abstracts' as *;
+
+.hada-news {
+  margin-top: $space-8;
+}
+
+.hada-news-header {
+  display: flex;
+  align-items: baseline;
+  gap: $space-3;
+  margin-bottom: $space-2;
+
+  h2 {
+    margin-bottom: 0;
+    font-size: var(--text-xl);
+  }
+
+  a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+  }
+}
+
+.hada-news-list {
+  border-top: 1px solid var(--color-border);
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: $space-2 $space-4;
+    padding: $space-3 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  a {
+    font-weight: var(--font-weight-medium);
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}
+
+.hada-news-meta {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}

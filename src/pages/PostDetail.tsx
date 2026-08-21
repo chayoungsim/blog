@@ -17,9 +17,10 @@ const PostDetail = () => {
         ← 글 목록으로
       </Link>
       <header className="post-detail-header">
-        <span className="post-card-category">{post.category}</span>
+        
         <h1>{post.title}</h1>
         <time dateTime={post.date}>{post.date}</time>
+        <span className="post-card-category">{post.category}</span>
       </header>
       <div className="post-detail-content">
         <Markdown>{post.content}</Markdown>
