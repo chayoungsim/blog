@@ -6,6 +6,7 @@ import logo from "@/assets/images/chayoungsim-tech.svg"
 const NAV_ITEMS = [
   { to: "/", label: "Home", end: true },
   { to: "/posts", label: "Posts", end: false },
+  { to: "/projects", label: "Projects", end: false },
   { to: "/about", label: "About", end: false },
 ]
 

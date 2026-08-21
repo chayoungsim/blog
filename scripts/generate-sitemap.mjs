@@ -1,13 +1,14 @@
 // public/sitemap.xml을 src/posts/<카테고리>/*.md 기준으로 생성한다.
 // `npm run build` 실행 시 prebuild 훅으로 자동 실행되므로 글/카테고리 폴더를 추가·삭제해도
 // 따로 손댈 필요가 없다.
-import { readdirSync, writeFileSync } from "node:fs"
+import { existsSync, readdirSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const SITE_URL = "https://chayoungsim.github.io/blog"
 const postsDir = join(__dirname, "../src/posts")
+const projectsDir = join(__dirname, "../src/projects")
 
 const categoryDirs = readdirSync(postsDir, { withFileTypes: true }).filter((entry) => entry.isDirectory())
 
@@ -25,11 +26,19 @@ for (const dir of categoryDirs) {
   }
 }
 
+const projectRoutes = existsSync(projectsDir)
+  ? readdirSync(projectsDir)
+      .filter((file) => file.endsWith(".md"))
+      .map((file) => `/projects/${file.replace(/\.md$/, "")}`)
+  : []
+
 const routes = [
   "/",
   "/about",
   "/posts",
+  "/projects",
   ...postRoutes,
+  ...projectRoutes,
   ...Array.from(categories).map((category) => `/category/${encodeURIComponent(category)}`),
 ]
 

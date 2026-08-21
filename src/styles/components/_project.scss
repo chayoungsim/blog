@@ -1,0 +1,94 @@
+@use '@/styles/abstracts' as *;
+
+.project-list {
+  @include auto-grid(28rem, $space-6);
+  margin-top: $space-6;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $space-5;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  @include lift;
+}
+
+.project-card-title {
+  margin-bottom: $space-3;
+  font-size: var(--text-lg);
+}
+
+.project-card-description {
+  flex: 1;
+  margin-bottom: $space-4;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.project-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+
+  li {
+    padding: $space-1 $space-3;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+}
+
+.project-detail-header {
+  margin-bottom: $space-6;
+
+  h1 {
+    margin-bottom: $space-3;
+  }
+
+  p {
+    margin-bottom: $space-4;
+    color: var(--color-text-muted);
+  }
+
+  .project-card-tech {
+    margin-bottom: $space-5;
+  }
+}
+
+.project-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+}
+
+.project-detail-link {
+  display: inline-flex;
+  align-items: center;
+  padding: $space-2 $space-4;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-primary-hover);
+  }
+
+  &--secondary {
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--color-border);
+    }
+  }
+}

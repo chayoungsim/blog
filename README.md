@@ -35,16 +35,36 @@ React 학습 + Git/GitHub + Markdown + SEO + 접근성 + 반응형 + 배포를 �
 
 현재 카테고리: `React`, `TypeScript`, `CSS`, `Animation`, `Accessibility`, `TIL`, `Git`
 
+## 프로젝트 등록 방법
+
+1. `src/projects/` 아래에 `.md` 파일을 추가합니다.
+2. frontmatter를 채웁니다.
+
+   ```md
+   ---
+   title: "프로젝트 이름"
+   description: "한 줄 소개"
+   github: "https://github.com/..."
+   site: "https://example.com"   # 배포된 사이트가 없으면 생략 가능
+   tech: "React, TypeScript, Vite"
+   date: "2026-01-01"
+   ---
+   ```
+
+3. `/projects`에 카드로 자동 노출됩니다. 아직 등록된 프로젝트는 없습니다.
+
 ## 폴더 구조
 
 ```
 src/
 ├── components/
 │   ├── blog/       # PostCard, PostList, CategoryNav
+│   ├── project/     # ProjectCard, ProjectList
 │   └── common/      # Header, Footer, Container
 ├── pages/           # 라우트에 연결되는 페이지 컴포넌트
 ├── posts/           # src/posts/카테고리명/글.md
-├── lib/             # posts.ts(글 로딩/파싱), frontmatter.ts
+├── projects/         # src/projects/*.md
+├── lib/             # posts.ts, projects.ts(로딩/파싱), frontmatter.ts
 ├── hooks/           # useDocumentMeta 등
 ├── routes/          # router.tsx (라우트 정의)
 ├── styles/          # SCSS 7-1 아키텍처

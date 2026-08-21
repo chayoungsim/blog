@@ -5,8 +5,11 @@ import About from "@/pages/About"
 import Posts from "@/pages/Posts"
 import PostDetail from "@/pages/PostDetail"
 import CategoryPage from "@/pages/CategoryPage"
+import Projects from "@/pages/Projects"
+import ProjectDetail from "@/pages/ProjectDetail"
 import NotFound from "@/pages/NotFound"
 import { getAllCategories, getAllPosts, getPostBySlug, getPostsByCategory } from "@/lib/posts"
+import { getAllProjects, getProjectBySlug } from "@/lib/projects"
 
 const router = createBrowserRouter(
   [
@@ -38,6 +41,19 @@ const router = createBrowserRouter(
               throw new Response("Not Found", { status: 404 })
             }
             return getPostsByCategory(category)
+          },
+          errorElement: <NotFound />,
+        },
+        { path: "projects", element: <Projects />, loader: () => getAllProjects() },
+        {
+          path: "projects/:slug",
+          element: <ProjectDetail />,
+          loader: ({ params }) => {
+            const project = getProjectBySlug(params.slug ?? "")
+            if (!project) {
+              throw new Response("Not Found", { status: 404 })
+            }
+            return project
           },
           errorElement: <NotFound />,
         },
