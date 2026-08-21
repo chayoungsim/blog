@@ -49,7 +49,7 @@ const ProjectDetail = () => {
               사이트 방문 ↗
             </a>
           )}
-        </div>
+        </div>        
       </header>
       {project.content && (
         <div className="post-detail-content">
