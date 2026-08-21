@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://chayoungsim.github.io/blog/</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/about</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/git-branch-strategy</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/react-state-management</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/web-accessibility-basics</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/Git</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/React</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/Accessibility</loc></url>
+</urlset>

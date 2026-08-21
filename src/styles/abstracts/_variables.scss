@@ -1,0 +1,106 @@
+ /* primitive */
+// design-system.md 기준 (CN T HOTH Corporate Website Renewal, docs/05-design-system.md)
+@use "sass:color";
+
+// 1. Colors
+// ==========================================================================
+// Brand
+$color-primary: #0a192f; // Deep Navy
+$color-secondary: #0066ff; // Blue Accent
+$color-accent: #00f0ff; // Cyan Accent
+
+// Base
+$color-white: #fff;
+$color-black: #000;
+
+// UI Colors
+$color-bg: #f8fafc;
+$color-surface: #ffffff;
+$color-text: #0f172a;
+$color-text-muted: #64748b;
+$color-border: #e2e8f0;
+
+// Semantic
+$color-success: #10b981;
+$color-warning: #f59e0b;
+$color-danger: #ef4444;
+
+// Grayscale - useful for text, backgrounds, borders (스타일가이드/컴포넌트 공용)
+$color-gray-100: #f8f8f8;
+$color-gray-200: #eeeeee; // Used in blockquote border
+$color-gray-300: #dddddd;
+$color-gray-400: #bbbbbb;
+$color-gray-500: #999999;
+$color-gray-600: #777777; // Used in blockquote text
+$color-gray-700: #555555;
+$color-gray-800: #333333; // Close to body text color
+$color-gray-900: #111111;
+
+// Theme Colors
+$color-background: $color-bg;
+$color-link: $color-secondary;
+$color-border-light: $color-gray-100;
+$color-border-hover: color.adjust($color-border, $lightness: -5%); // border hover/focus 상태 (기존 darken($color-border, 5%) 대체)
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, #{$color-primary} 0%, #{$color-secondary} 100%);
+$gradient-accent: linear-gradient(90deg, #{$color-secondary} 0%, #{$color-accent} 100%);
+
+// 2. Fonts
+// ==========================================================================
+// 2.1. 폰트 패밀리
+$font-kr: "Pretendard", "Noto Sans KR", sans-serif;
+$font-en: "Montserrat", sans-serif;
+
+$font-family-kr: 'Pretendard', 'Noto Sans KR', sans-serif;
+$font-family-en: 'Montserrat', sans-serif;
+$font-family-sans: 'Pretendard', 'Noto Sans KR', 'Montserrat', sans-serif;
+$font-display: 'Playfair Display', serif; // 히어로/섹션 타이틀 이탤릭 악센트 전용
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// 3. Typography Scale (1rem = 10px 기준, html font-size clamp 참고)
+// ==========================================================================
+$text-xs: 1.2rem; // 12px
+$text-sm: 1.4rem; // 14px
+$text-base: 1.6rem; // 16px
+$text-lg: 1.8rem; // 18px
+$text-xl: 2.1rem; // 21px
+$text-2xl: 3.2rem; // 32px
+$text-3xl: 4.4rem; // 44px
+
+// 4. Spacing
+// ==========================================================================
+$spacing-base: 1rem; // 10px
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+$space-7: 48px;
+$space-8: 64px;
+$space-9: 96px;
+
+// 5. Layout
+// ==========================================================================
+$container-max-width: 128rem; // 1280px (Desktop Large)
+
+// 6. Radius / Shadow
+// ==========================================================================
+$radius-none: 0;
+$radius-sm: 0.6rem; // 6px
+$radius-md: 1.2rem; // 12px
+$radius-lg: 2rem; // 20px
+$radius-xl: 3.2rem; // 문서에 없는 확장 토큰 (대형 카드/배너용)
+$radius-circle: 50%;
+
+$shadow-card: 0 10px 30px rgba(10, 25, 47, 0.08);
+$shadow-hover: 0 16px 40px rgba(0, 102, 255, 0.16);
+
+// 7. Paths
+// ==========================================================================
+// public/ 폴더 기준 절대경로. mask url()이 동적 파일명을 조합하므로
+// Vite가 빌드타임에 정적분석할 수 없어 public에 두고 절대경로로 참조한다.
+$url-imgs: '/assets/';

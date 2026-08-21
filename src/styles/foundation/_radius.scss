@@ -1,0 +1,16 @@
+@use '@/styles/abstracts' as *;
+
+:root {
+
+  --radius-no: #{$radius-none};
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-circle: #{$radius-circle};
+
+  --shadow-card: #{$shadow-card};
+  --shadow-hover: #{$shadow-hover};
+  --near-black: #222222;
+}
+

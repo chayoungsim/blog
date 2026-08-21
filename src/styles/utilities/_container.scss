@@ -1,0 +1,18 @@
+@use '@/styles/abstracts' as *;
+
+// 서브페이지 최상단 section 공통 클래스
+// 각 페이지 컴포넌트의 <section className={styles.xxx}> 대신
+// 전역 클래스 하나로 세로 여백/배경을 공통 제어합니다.
+.contents {
+  width: 100%;
+  padding: 0;  
+}
+
+// 서브페이지 공통 컨테이너
+// 각 페이지 컴포넌트의 최상단 wrapper(className={styles.inner}) 대신
+// 전역 클래스 하나로 최대너비/여백을 공통 제어합니다.
+.static {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $space-5;
+}

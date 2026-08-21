@@ -1,0 +1,62 @@
+@use '@/styles/abstracts/variables' as *;
+
+/* Typography Tokens */
+// design-system.md 3.2 타이포그래피 토큰 기준 (docs/05-design-system.md)
+// 웹폰트(Noto Sans KR / Montserrat)는 index.html에서 Google Fonts로 로드한다.
+
+:root {
+  // Font Family
+  --font-family-base: #{$font-family-sans};
+  --font-kr: #{$font-family-kr};
+  --font-en: #{$font-family-en};
+  --font-display: #{$font-display};
+
+  // Font Weight
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-bold: #{$font-weight-bold};
+
+  // Font Scale
+  --text-xs: #{$text-xs};
+  --text-sm: #{$text-sm};
+  --text-base: #{$text-base};
+  --text-lg: #{$text-lg};
+  --text-xl: #{$text-xl};
+  --text-2xl: #{$text-2xl};
+  --text-3xl: #{$text-3xl};
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/fonts/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/fonts/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/fonts/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/fonts/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/fonts/Pretendard-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}

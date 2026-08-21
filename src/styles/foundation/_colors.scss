@@ -1,0 +1,83 @@
+@use 'sass:color';
+@use '@/styles/abstracts/variables' as *;
+
+/* Color System */
+// design-system.md 3.1 색상 토큰 기준 (docs/05-design-system.md)
+
+// Default theme (Light Mode)
+:root {
+  // Brand Colors
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{color.adjust($color-primary, $lightness: -10%)};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-hover: #{color.adjust($color-secondary, $lightness: -10%)};
+  --color-accent: #{$color-accent};
+
+  // Gradients
+  --gradient-primary: #{$gradient-primary};
+  --gradient-accent: #{$gradient-accent};
+
+  // UI Colors
+  --color-background: #{$color-background};
+  --color-surface: #{$color-surface};
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-link: #{$color-link};
+  --color-border: #{$color-border};
+
+  // Semantic Colors
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-danger: #{$color-danger};
+  --color-danger-hover: #{color.adjust($color-danger, $lightness: -10%)};
+
+  // Grayscale Palette
+  --color-gray-100: #{$color-gray-100};
+  --color-gray-200: #{$color-gray-200};
+  --color-gray-300: #{$color-gray-300};
+  --color-gray-400: #{$color-gray-400};
+  --color-gray-500: #{$color-gray-500};
+  --color-gray-600: #{$color-gray-600};
+  --color-gray-700: #{$color-gray-700};
+  --color-gray-800: #{$color-gray-800};
+  --color-gray-900: #{$color-gray-900};
+
+  // Base Colors
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+}
+
+// Dark Mode: Applied when the user's OS is in dark mode OR when `data-theme="dark"` is set on the html element.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-background: #{$color-gray-900};
+    --color-surface: #{$color-gray-800};
+    --color-primary-hover: #{color.adjust($color-primary, $lightness: 10%)}; // 다크모드에서는 더 밝게
+    --color-secondary-hover: #{color.adjust($color-secondary, $lightness: 10%)};
+    --color-text: #{$color-gray-200};
+    --color-text-muted: #{$color-gray-400};
+    --color-link: #{$color-secondary}; // Can be adjusted for better contrast
+    --color-border: #{$color-gray-700};
+    --color-danger-hover: #{color.adjust($color-danger, $lightness: 10%)};
+  }
+
+  .roadmap .wrap {
+    background: transparent;
+  }
+}
+
+[data-theme='dark'] {
+  --color-background: #{$color-gray-900};
+  --color-surface: #{$color-gray-800};
+  --color-primary-hover: #{color.adjust($color-primary, $lightness: 10%)}; // 다크모드에서는 더 밝게
+  --color-secondary-hover: #{color.adjust($color-secondary, $lightness: 10%)};
+  --color-text: #{$color-gray-200};
+  --color-text-muted: #{$color-gray-400};
+  --color-link: #{$color-secondary};
+  --color-border: #{$color-gray-700};
+  --color-danger-hover: #{color.adjust($color-danger, $lightness: 10%)};
+
+  .roadmap .wrap {
+    background: transparent;
+  }
+}
