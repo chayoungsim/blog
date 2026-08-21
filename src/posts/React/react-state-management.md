@@ -1,7 +1,6 @@
 ---
 title: "React state 관리, useState와 useReducer 언제 나눠 쓸까"
 date: "2026-08-10"
-category: "React"
 description: "간단한 토글은 useState로, 상태 전이가 복잡해지면 useReducer로 옮기며 기준을 정리했다."
 ---
 

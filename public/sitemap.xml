@@ -3,10 +3,18 @@
   <url><loc>https://chayoungsim.github.io/blog/</loc></url>
   <url><loc>https://chayoungsim.github.io/blog/about</loc></url>
   <url><loc>https://chayoungsim.github.io/blog/posts</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/web-accessibility-basics</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/css-transition-vs-animation</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/flexbox-vs-grid</loc></url>
   <url><loc>https://chayoungsim.github.io/blog/posts/git-branch-strategy</loc></url>
   <url><loc>https://chayoungsim.github.io/blog/posts/react-state-management</loc></url>
-  <url><loc>https://chayoungsim.github.io/blog/posts/web-accessibility-basics</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/til-git-restore-staged</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/posts/type-narrowing</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/Accessibility</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/Animation</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/CSS</loc></url>
   <url><loc>https://chayoungsim.github.io/blog/category/Git</loc></url>
   <url><loc>https://chayoungsim.github.io/blog/category/React</loc></url>
-  <url><loc>https://chayoungsim.github.io/blog/category/Accessibility</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/TIL</loc></url>
+  <url><loc>https://chayoungsim.github.io/blog/category/TypeScript</loc></url>
 </urlset>

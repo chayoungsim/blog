@@ -14,7 +14,7 @@ const CategoryNav = () => {
         </li>
         {categories.map((category) => (
           <li key={category}>
-            <NavLink to={`/category/${category}`}>{category}</NavLink>
+            <NavLink to={`/category/${encodeURIComponent(category)}`}>{category}</NavLink>
           </li>
         ))}
       </ul>

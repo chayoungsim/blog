@@ -18,21 +18,22 @@ React 학습 + Git/GitHub + Markdown + SEO + 접근성 + 반응형 + 배포를 �
 
 ## 글 작성 방법
 
-1. `src/posts/` 아래에 `.md` 파일을 추가합니다. 파일명이 곧 글 주소(`/posts/파일명`)가 됩니다.
+1. `src/posts/카테고리명/` 아래에 `.md` 파일을 추가합니다. **카테고리는 frontmatter가 아니라 폴더명으로 정해집니다.** 파일명이 곧 글 주소(`/posts/파일명`)가 됩니다.
 2. 파일 맨 위에 frontmatter를 채웁니다.
 
    ```md
    ---
    title: "글 제목"
    date: "2026-01-01"
-   category: "카테고리명"
    description: "목록/검색엔진에 노출될 한 줄 요약"
    ---
 
    본문은 여기부터 Markdown으로 작성합니다.
    ```
 
-3. 저장 후 `npm run dev`로 확인하면 `/posts` 목록과 `/category/카테고리명`에 자동으로 반영됩니다. 별도로 목록을 수정하거나 라우트를 추가할 필요가 없습니다.
+3. 저장 후 `npm run dev`로 확인하면 `/posts` 목록과 `/category/카테고리명`에 자동으로 반영됩니다. 별도로 목록을 수정하거나 라우트를 추가할 필요가 없습니다. 새 카테고리도 `src/posts/` 아래에 폴더만 새로 만들면 바로 생깁니다.
+
+현재 카테고리: `React`, `TypeScript`, `CSS`, `Animation`, `Accessibility`, `TIL`, `Git`
 
 ## 폴더 구조
 
@@ -42,7 +43,7 @@ src/
 │   ├── blog/       # PostCard, PostList, CategoryNav
 │   └── common/      # Header, Footer, Container
 ├── pages/           # 라우트에 연결되는 페이지 컴포넌트
-├── posts/           # Markdown 글
+├── posts/           # src/posts/카테고리명/글.md
 ├── lib/             # posts.ts(글 로딩/파싱), frontmatter.ts
 ├── hooks/           # useDocumentMeta 등
 ├── routes/          # router.tsx (라우트 정의)

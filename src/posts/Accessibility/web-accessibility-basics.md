@@ -1,7 +1,6 @@
 ---
 title: "본문 바로가기 링크, 왜 눈에는 안 보이게 만들까"
 date: "2026-08-18"
-category: "Accessibility"
 description: "스킵 링크를 직접 구현하면서 position과 focus 상태를 어떻게 다뤄야 하는지 정리했다."
 ---
 

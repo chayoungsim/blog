@@ -1,7 +1,6 @@
 ---
 title: "혼자 하는 프로젝트에서도 브랜치 전략이 필요한 이유"
 date: "2026-07-28"
-category: "Git"
 description: "1인 프로젝트라도 main과 feature 브랜치를 분리하니 되돌리기가 훨씬 쉬워졌다."
 ---
 
