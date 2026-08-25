@@ -5,7 +5,7 @@ description: "타입스크립트가 자체적으로 제공한 타입들 "
 ---
 
 ## 기본 타입
-![타입스크립트가 자체적으로 제공하는 타입](/blog/images/typescript/basic-01.png)
+![타입 계층도](/blog/images/typescript/basic-01.png)
 
 ### 원시 타입(Primitive Type)
 동시에 한개의 값만 저장할 수 있는 타입들을 말합니다.
