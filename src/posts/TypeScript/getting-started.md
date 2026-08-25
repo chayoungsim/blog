@@ -1,7 +1,7 @@
 ---
 title: "TypeScript Start"
-date: "2026-08-25
-description: "any 대신 unknown을 쓰기 시작하면서 타입 좁히기(narrowing)가 왜 필요한지 체감한 기록."
+date: "2026-08-25"
+description: "타입스크립트는 기존의 자바스크립트를 더 안전하게 사용할 수 있도록 타입 관련된 여러가지 기능들을 추가한 언어입니다. "
 ---
 
 ## 한 입 크키로 잘라먹는 타입스크립트 강의
