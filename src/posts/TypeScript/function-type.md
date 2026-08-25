@@ -158,3 +158,155 @@ const add2: Operation2 = (a, b) => a + b;
 add2(1, 2);
 add2.name;
 ```
+
+## 함수 타입의 호환성이란?
+- 함수 타입의 호환성이란 특정 함수 타입을 다른 함수 타입으로 괜찮은지 판단하는 것을 의미합니다.
+- 다음 2가지 기준으로 함수 타입의 호환성을 판단하게 됩니다.
+-- 두 함수의 반환값 타입이 호환되는가?
+-- 두 함수의 매개변수의 타입이 호환되는가?
+
+### 기준 1 : 반환값 타입이 호환되는가?
+- A와 B 함수 타입이 있다고 가정할 때 A 반환값 타입이 B 반환값 타입의 슈퍼타입이라면 두 타입은 호환됩니다.
+```ts
+type A = () => number;
+type B = () => 10;
+
+let a: A = () => 10;
+let b: B = () => 10;
+
+a = b; // ✅
+b = a; // ❌
+// A의 반환값 타입은 Number, B의 반환값 타입은 Number Literal 입니다. 
+// 따라서 변수 a에 b를 할당하는 것은 가능하나 반대로는 불가능 합니다.
+
+```
+
+### 기준 2 : 매개변수의 타입이 호환되는가?
+- 2-1. 매개변수의 개수가 같을 때
+- 두 함수 타입 C와 D가 있다고 가정할 때 두 타입의 매개변수의 개수가 같다면 C 매개변수의 타입이 D 매개변수 타입의 서브 타입일 때에 호환됩니다.
+```ts
+type C = (value: number) => void;
+type D = (value: 10) => void;
+
+let c: C = (value) => {};
+let d: D = (value) => {};
+
+c = d; // ❌
+d = c; // ✅
+```
+```ts
+type Animal = {
+  name: string;
+};
+
+type Dog = {
+  name: string;
+  color: string;
+};
+
+let animalFunc = (animal: Animal) => {
+  console.log(animal.name);
+};
+
+let dogFunc = (dog: Dog) => {
+  console.log(dog.name);
+  console.log(dog.color);
+};
+
+animalFunc = dogFunc; // ❌
+dogFunc = animalFunc; // ✅
+```
+### 2-2. 매개변수의 개수가 다를 때
+매개변수의 개수가 다를 때에는 비교적 간단합니다.
+```ts
+type Func1 = (a: number, b: number) => void;
+type Func2 = (a: number) => void;
+
+let func1: Func1 = (a, b) => {};
+let func2: Func2 = (a) => {};
+
+func1 = func2; // ✅
+func2 = func1; // ❌
+```
+
+## 함수 오버로딩
+- 함수 오버로딩이란 하나의 함수를 매개변수의 개수나 타입에 따라 다르게 동작하도록 만드는 문법입니다.
+/**
+ * 함수 오버로딩
+ * 같은 함수를 매개변수의 개수나 타입에 따라
+ * 여러가지 버전으로 만드는 문법
+ * -> 하나의 함수 func
+ * -> 일단 모든 매개변수는 넘버타입
+ * -> Ver1. 매개변수가 1개일 때에는 매개변수에 20을 곱한 값을 출력
+ * -> Ver2. 매개변수가 3개일 때에는 모든 매개변수를 더한 값을 출력
+ */
+
+
+ ```ts
+ // 버전들 -> 오버로드 시그니쳐
+function func(a: number): void;
+function func(a: number, b: number, c: number): void;
+
+// 실제 구현부 -> 구현 시그니쳐
+function func(a: number, b?: number, c?: number) {
+  if (typeof b === "number" && typeof c === "number") {
+    console.log(a + b + c);
+  } else {
+    console.log(a * 20);
+  }
+}
+
+func(1);        // ✅ 버전 1 - 오버로드 시그니쳐
+func(1, 2);     // ❌ 
+func(1, 2, 3);  // ✅ 버전 3 - 오버로드 시그니쳐
+```
+
+## 사용자 저의 타입가드
+
+```ts
+type Dog = {
+    name: string;
+    isBark: boolean;
+}
+
+type Cat = {
+    name: string;
+    isScratch: boolean;
+}
+
+type Animal =  Dog | Cat;
+
+function warning(animal:Animal) {
+    if("isBark" in animal) {
+        console.log(animal.isBark ? "짖습니다" : "안짖어요")
+
+    } else if("isScratch" in animal) {
+        console.log(animal.isScratch ? "할큅니다." : "안할퀴어요");
+    }
+}
+
+```
+- 만약 Dog 타입의 프로퍼티가 다음과 같이 중간에 이름이 수정되거나 추가 또는 삭제될 경우에는 타입 가드가 제대로 동작하지 않을 수도 있습니다.
+- 따라서 이럴 때에는 다음과 같이 함수를 이용해 커스텀 타입 가드를 만들어 타입을 좁히는게 더 좋습니다.
+```ts
+
+//Dog 타입인지 확인하는 타입가드
+function isDog(animal: Animal) : animal is Dog {
+    return(animal as Dog).isBark !== undefined;
+}
+
+//Cat 타입인지 확인하는 타입카드
+function isCat(animal:Animal) : animal is Cat {
+    return (animal as Cat).isScratch !== undefined;
+}
+
+function warning(animal:Animal) {
+    if(isDog(animal)) {
+        console.log(animal.isBark ? "짖습니다." : "안짖어요")
+    } else {
+        console.log(animal.isScratch ? "할큅니다" : "안할퀴어요")
+    }
+}
+
+```
+
