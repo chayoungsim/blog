@@ -13,4 +13,5 @@ React 학습용으로 기존 정적 HTML 사이트를 React로 클론했다.
 - 정적 HTML/CSS를 섹션·컴포넌트 단위로 분해해 React 컴포넌트로 재구성
 - React Router로 페이지 간 이동 구현
 - 반응형 레이아웃 적용
+- API를 이용한 게시판 및 포트폴리오 화면 구현
 - C:\Dev\Projects\ai-happyict

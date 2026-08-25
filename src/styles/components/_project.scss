@@ -5,6 +5,32 @@
   margin-top: $space-6;
 }
 
+.projects-preview {
+  margin-top: $space-8;
+}
+
+.projects-preview-header {
+  display: flex;
+  align-items: baseline;
+  gap: $space-3;
+
+  h2 {
+    margin-bottom: 0;
+    font-size: var(--text-xl);
+  }
+
+  a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+  }
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
