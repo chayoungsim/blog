@@ -6,7 +6,12 @@ description: "React 프로젝트 생성, 구조 셋팅"
 
 ## 프로젝트 생성 Vite 이용
 ```tsx
-$npm create vite@latest my-react-app -- --template react
+$npm create vite@latest my-react-app 
+// Select a framework: react
+// Select a variant: TypeScript
+// Which linter to use? ESLint
+// Install with npm and start now?
+
 $cd my-react-app
 $npm install
 $npm run dev
