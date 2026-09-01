@@ -1,0 +1,173 @@
+@use '@/styles/abstracts' as *;
+
+// ─────────────────────────────────────────────
+// About 페이지
+// ─────────────────────────────────────────────
+
+.about {
+  h1 {
+    @include fluid-text($text-2xl, $text-3xl);
+    margin-bottom: $space-4;
+  }
+}
+
+.about-lead {
+  max-width: 60ch;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+// 로드맵 섹션 ------------------------------------
+
+.about-roadmap {
+  margin-top: $space-8;
+  padding-top: $space-7;
+  border-top: 1px solid var(--color-border);
+
+  h2 {
+    @include fluid-text($text-xl, $text-2xl);
+    margin-bottom: $space-3;
+  }
+}
+
+.about-roadmap__intro {
+  max-width: 60ch;
+  color: var(--color-text-muted);
+}
+
+// 3축 요약 카드 --------------------------------
+
+.about-axes {
+  display: grid;
+  gap: $space-4;
+  margin-top: $space-5;
+
+  @include respond(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-axis {
+  position: relative;
+  padding: $space-5;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  &::before {
+    content: attr(data-index);
+    position: absolute;
+    top: $space-3;
+    right: $space-4;
+    font-family: $font-family-en;
+    font-size: $text-3xl;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    color: var(--color-border);
+  }
+}
+
+.about-axis__title {
+  position: relative;
+  margin-bottom: $space-2;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.about-axis__desc {
+  position: relative;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+// 트랙 상세 -----------------------------------
+
+.about-track {
+  margin-top: $space-7;
+
+  h3 {
+    display: flex;
+    align-items: baseline;
+    gap: $space-3;
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h3::before {
+    content: attr(data-step);
+    flex: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family-en;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: var(--radius-circle);
+    transform: translateY(0.1rem);
+  }
+}
+
+.about-track__desc {
+  margin: $space-3 0 $space-4;
+  color: var(--color-text-muted);
+}
+
+.about-track__list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  li {
+    padding: $space-3 $space-4;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-secondary);
+    border-radius: var(--radius-sm);
+    line-height: 1.6;
+
+    strong {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
+
+// 태그형 목록 (컴팩트) -------------------------
+
+.about-track__list--plain li {
+  border-left-width: 1px;
+  border-left-color: var(--color-border);
+}
+
+// 하위 블록 (AI Publisher Assistant) ----------
+
+.about-subblock {
+  margin-top: $space-5;
+
+  h4 {
+    margin-bottom: $space-3;
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+  }
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+
+  li {
+    padding: $space-1 $space-3;
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    background-color: var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+}
