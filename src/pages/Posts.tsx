@@ -14,7 +14,7 @@ const Posts = () => {
 
   return (
     <section className="static">
-      <h1>글 목록</h1>
+      <h1>Posts</h1>
       <CategoryNav />
       <PostList posts={posts} />
     </section>
