@@ -10,6 +10,7 @@ date: "2026-09-02"
 ## 만든 이유
 
 검색엔진(SEO)뿐 아니라 챗봇형 답변엔진(AEO)과 생성형 AI 검색(GEO)에서도 웹사이트가 잘 노출되는지 한 곳에서 확인하고 싶어서 만들었다. GEO 항목만 다뤘던 [GEO Audit Checklist](/projects/geo-audit)와 SEO·AEO·GEO를 나눠 점검하던 [Search & AI Optimization v1](/projects/geo-app)을 이어받아, 세 관점을 하나의 앱에서 "개념 이해 → 자가 진단 → 실행 가이드"까지 연결되도록 다시 구성했다.
+- C:\frontend-lab\SearchAI\SearchAI
 
 ## 세 가지 최적화 관점
 
