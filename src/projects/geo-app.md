@@ -11,6 +11,7 @@ date: "2026-08-24"
 
 검색엔진(SEO)뿐 아니라 챗봇형 답변엔진(AEO)과 생성형 AI 검색(GEO)에서도 웹사이트가 잘 노출되는지 한 곳에서 확인하고 싶어서 만들었다. GEO 항목만 다뤘던 [GEO Audit Checklist](/projects/geo-audit)를 확장해, SEO·AEO·GEO 세 가지 관점을 하나의 앱에서 함께 점검할 수 있도록 구성했다.
 
+
 ## 주요 기능
 
 - SEO / AEO / GEO 세 영역으로 나눈 점검 항목을 각각 확인
