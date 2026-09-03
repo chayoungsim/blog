@@ -1,7 +1,7 @@
 ---
 title: "<picture>와 <figure>는 언제 써야 할까"
 date: "2026-09-03"
-description: ""
+description: "반응형 이미지 소스를 분기할 땐 picture, 캡션과 미디어를 시맨틱하게 그룹화할 땐 figure를 사용하는 기준 정리."
 ---
 
 ## picture
