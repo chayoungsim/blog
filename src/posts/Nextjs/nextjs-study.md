@@ -131,5 +131,29 @@ export default function Page() {
 - 빌드 타임에 미리 페이지를 사전 렌더링 해 둠
 - 사전 렌더링에 많은 시간이 소요되는 페이지더라도 사용자의 요청에는 매우 빠른속도로 응답 가능
 - 매번 똑같은 페이지만 응답함, 최신 데이터 반영은 어렵다
+- fallback 옵션 설정 (없는 경로로 요청시)
+-- false : 404 Not Found반환
+-- blocking : 즉시 생성(Like SSR)
+-- true :  즉시생성 + 페이지만 미리반환
 
-3. 증분 정적 재생성(ISR)
+3. 증분 정적 재 생성(ISR) - Incremental Static Regeneration (추천)
+- 단순히 그냥 SSG 방식으로 생성된 정적 페이지를 일정 시간을 주기로 다시 생성하는 기술임
+- 매우 빠른 속도로 응답 가능 기존 SSG 방식의 장점, 최신 데이터 반영 가능 기존 SSR방식의 장점
+```ts
+export const getStaticProps = async () => {      
+    //병렬
+    const [ allBooks, recoBooks ] = await Promise.all([
+        fetchBooks(),
+        fetchRandomBooks()
+    ])
+    return {
+        props: {
+           allBooks,
+           recoBooks
+        },
+        revalidate:3, //ISR 3초주기로 업데이트 
+    }
+}
+```
+4. On-Demand ISR - 요청을 받을때 마다 ISR 페이지를 다시 생성하는
+- 게시글 수정
