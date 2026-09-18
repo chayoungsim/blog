@@ -15,9 +15,9 @@ const About = () => {
       </p>
 
       <div className="about-roadmap">
-        <h2>퍼블리싱 파트 로드맵</h2>
+        <h2>프론트앤드 로드맵</h2>
         <p className="about-roadmap__intro">
-          현재 진행 중인 작업, 해야 할 작업, 앞으로 나아가야 할 방향을 세 축으로 정리한 문서입니다.
+          프론트앤드 개발자로서 현재 진행 중인 작업, 해야 할 작업, 앞으로 나아가야 할 방향을 세 축으로 정리한 문서입니다.
         </p>
 
         <ul className="about-axes">
