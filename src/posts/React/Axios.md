@@ -48,8 +48,8 @@ const api = axios.create({
 export default api
 
 // api/userApi.ts
-import api fro './client';
-import type { User } from '../types/user";
+import api from './client';
+import type { User } from '../types/user';
 
 export async function getUsers() : Promise<User[]> {
     try {
@@ -57,7 +57,7 @@ export async function getUsers() : Promise<User[]> {
         return response.data;
     } catch(error) {
         console.error("Failed to fetch user:", error);
-        throw error; //호출하는 쪽에서 에러 상태를 처리할 숭 있도록 throw
+        throw error; //호출하는 쪽에서 에러 상태를 처리할 수 있도록 throw
     }
 }
 
