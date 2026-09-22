@@ -42,7 +42,7 @@ promise.then((response) => {
 // 아쉽게도 reject 함수에 인수로 전달하는 값 즉 실패의 결과값 타입은 정의할 수 없습니다. 
 // any 타입으로 고정되어 있기 때문에 catch 메서드에서 사용하려면 타입 좁히기를 통해 안전하게 사용하는걸 권장합니다.
 promise.catch((error) => {
-    if(typeof error === "string) {
+    if(typeof error === "string") {
         console.log(error)
     }
 })

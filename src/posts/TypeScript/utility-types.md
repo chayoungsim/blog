@@ -7,7 +7,7 @@ description: "Partial, Required, Readonly, Pick, Omit, Record, Exclude, Extract,
 ## 유틸리티 타입이란
 - 타입스크립트가 자체적으로 제공하는 특수한 타입들입니다. 
 - 우리가 지금까지 배웠던 제네릭, 맵드 타입, 조건부 타입 등의 타입 조작 기능을 이용해 실무에서 자주 사용되는 유용한 타입들을 모아 놓은 것을 의미합니다.
-- [Utility Types] (https://www.typescriptlang.org/docs/handbook/utility-types.html)
+- [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
 
 ### Partial<T> 
 - 부분적인, 일부분의
@@ -64,7 +64,7 @@ const withThumbnailPost : Required<Post> = {
 
 //직접구현
 type Readonly<T> = {
-    readonly [key in keyof T] : T{key}
+    readonly [key in keyof T] : T[key]
 }
 
 const readonlyPost : Readonly<Post> =  {
@@ -97,7 +97,7 @@ type Pick<T, K extends keyof T> = {
 
 const legacyPost : Pick<Post, "title" | "content"> = {
     title:"옛날 글",
-    contnet: "옛날 컨텐츠",
+    content: "옛날 컨텐츠",
 }
 
 ```
@@ -113,7 +113,7 @@ const legacyPost : Pick<Post, "title" | "content"> = {
 type Omit<T,K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 // T = Post, K = 'title'
 // Pick<Post, Exclude<keyof Post, 'title'>>
-// Pick<Post, Exclude<'title' | 'contnet' | 'tags' | 'thumbnailURL','title'>>
+// Pick<Post, Exclude<'title' | 'content' | 'tags' | 'thumbnailURL','title'>>
 // Pick<Post, 'content' | 'tags' | 'thumbnailURL'>
 
 const noTitlePost : Omit<Post, "title"> = {
@@ -183,7 +183,7 @@ type B = Extract<string | boolean, boolean>
 - 함수의 반환값 타입을 추출하는 타입
 
 ```ts
-type ReturnType<T extends (...args: any) => any> = T extends(...agrs: any) => infer R ? R :never;
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R :never;
 
 
 function funcA() {

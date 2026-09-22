@@ -135,7 +135,6 @@ let book2: Book = { // 오류 발생
 
 let book3: Book = programmingBook; // 앞서 만들어둔 변수
 
-Copy
 function func(book: Book) {}
 
 func({ // 오류 발생
@@ -162,8 +161,8 @@ let arr : (number | string | boolean)[] = [1, "hello",true]
 
 //Union 타입과 객체 타입
 type Dog = {
-    name = string;
-    color = string;
+    name: string;
+    color: string;
 }
 
 type Person =  {

@@ -28,7 +28,7 @@ let str = func("string");
 만약 2개의 타입 변수가 필요한 상황이라면 다음과 같이 T, U 처럼 2개의 타입 변수를 사용해도 됩니다.
 ```ts
 function swap<T,U>(a:T,b:U) {
-    retrun[b,a]
+    return [b,a]
 }
 
 const [a,b] = swap("1",2);
@@ -41,7 +41,7 @@ function returnFirstValue<T>(data:T[]) {
     return data[0]
 }
 
-let num = retrunFirstValue([0,1,2])
+let num = returnFirstValue([0,1,2])
 //number
 
 let str = returnFirstValue([1,"hello", "mynamaeis"])
@@ -52,7 +52,7 @@ let str = returnFirstValue([1,"hello", "mynamaeis"])
 ### 사례3
 위 사례에서 만약 반환값의 타입을 배열의 첫번째 요소의 타입이 되도록 하려면 다음과 같이 튜플 타입과 나머지 파라미터를 이용하면 됩니다.
 ```ts
-function retrunFirstValue<T>(data: [T,...unknown[]]){
+function returnFirstValue<T>(data: [T,...unknown[]]){
     return data[0]
 }
 
@@ -159,7 +159,7 @@ interface User {
   profile: Student | Developer;
 }
 
-function goToSchool(user: User<Student>) {
+function goToSchool(user: User) {
   if (user.profile.type !== "student") {
     console.log("잘 못 오셨습니다");
     return;

@@ -104,11 +104,11 @@ class ExecutiveOfficer extends Employee {
 
 ### private :  클래스 내부에서만 이 필드에 접근할 수 있게 됩니다.
 
-### proteced : 클래스 외부에서는 접근이 안되지만 클래스 내부와 파생 클래스에서 접근이 가능하도록 설정하는 접근 제어자
+### protected : 클래스 외부에서는 접근이 안되지만 클래스 내부와 파생 클래스에서 접근이 가능하도록 설정하는 접근 제어자
 
 ```ts
 // 보통 생성자 매개변수에 접근 제어자를 설정하여 필드 선언과 생성자 내부 코드를 생략하는것이 훨씬 간결하고 빠르게 코드를 작성할 수 있어 좋습니다.
-// 필드를 생략할수있따
+// 필드를 생략할 수 있다
 class Employee {
   // 필드
 
@@ -137,7 +137,7 @@ interface CharacterInterface {
 
 class Character implements CharacterInterface{
 
-    // 생성자에 접근제어자를 쓰면 필드와 생성사 상세 생략할수있따
+    // 생성자에 접근제어자를 쓰면 필드와 생성자 코드를 생략할 수 있다
     constructor (public name: string, public moveSpeed: number,) {}
     move() : void {
         console.log(`${this.moveSpeed} 속도로 이동!`)

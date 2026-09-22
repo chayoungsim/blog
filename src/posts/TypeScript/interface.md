@@ -13,7 +13,7 @@ interface Person {
     age : number;
 }
 //이렇게 정의한 인터페이스를 타입 주석과 함께 사용해 변수의 타입을 정의할 수 있습니다.
-const Person : Person = {
+const person : Person = {
     name: "김석진",
     age: 27
 }
@@ -51,7 +51,7 @@ person.name = '홍길동' // ❌
 interface Person {
   readonly name: string;
   age?: number;
-  sayHi: () => void;;
+  sayHi: () => void;
 }
 ```
 
@@ -95,7 +95,7 @@ func.b = true;
 type Type1 = number | string | Person;
 type Type2 = number & string & Person;
 
-const person: Person & string = {
+const person: Person = {
   name: "이정환",
   age: 27,
 };
@@ -177,7 +177,7 @@ const dogCat: DogCat = {
 type Person = {
     name: string
 }
-type Person = {❌
+type Person = { // ❌
     age: number 
 }
 

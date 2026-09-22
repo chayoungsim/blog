@@ -29,7 +29,7 @@ interface Post {
 
 const post:Post = {
     title:"게시글 제목",
-    content:"게시글 본문".
+    content:"게시글 본문",
     author: {
         id:1,
         name:"김석진",
@@ -94,7 +94,7 @@ type Tup2 = Tup[2];
 //boolean
 
 // 인덱스에 number 타입을 넣으면 마치 튜플을 배열 처럼 인식해 배열 요소의 타입을 추출하게 됩니다.
-type Tup3 = Tub[number]
+type Tup3 = Tup[number]
 // number | string | boolean
 
 ```

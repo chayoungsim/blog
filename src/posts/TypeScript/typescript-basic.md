@@ -42,7 +42,7 @@ let null1 : null = null;
 // null 타입은 오직 null 값만 포함하는 타입입니다.
 
 // undefined
-let unde1 : undefined = undefinde;
+let unde1 : undefined = undefined;
 //undefined 타입 역시 null 타입과 마찬가지로 오직 하나의 값 undefined만 포함하는 타입입니다.
 
 ```
@@ -68,7 +68,7 @@ let numArr : number[] = [1,2,3]
 let strArr : string[] = ["hello","im","winterlood"]
 
 // 배열의 타입을 정의
-let boolArr : Array<boolean> = [true, fasle, true]
+let boolArr : Array<boolean> = [true, false, true]
 // Array<배열요소타입> 형태로도 배열의 타입을 정의할 수 있습니다. 
 // 참고로 이렇게 꺽쇠와 함께 타입을 작성하는 문법을 타입스크립트에서는 ‘제네릭’ 이라고 부릅니다.
 
@@ -145,7 +145,7 @@ let user : {
     name:"이승환"
 }
 
-use.id;
+user.id;
 // 변수 user의 타입을 number 타입의 id 그리고 string 타입의 name 프로퍼티를 갖는 객체 타입으로 정의했습니다.
 // 이렇듯 객체 리터럴과 비슷한 문법으로 객체 타입을 정의한 타입을 객체 리터럴 타입이라고 부릅니다.
 // 변수의 타입을 객체 리터럴 타입으로 정의하면 이제 타입내에 정의되어있는 프로퍼티에 이상 없이 접근할 수 있게 됩니다. 
@@ -217,8 +217,8 @@ type User = {
 let user : User = {
     id:1,
     name:"이승환",
-    nickName:"little prince",
-    birth:"1997.01.01"
+    nickname:"little prince",
+    birth:"1997.01.01",
     bio:"안녕하세요",
     location:"서울시"
 }
@@ -251,7 +251,7 @@ type CountryCodes = {
     UnitedKingdom : string;
 }
 
-let contryCodes : CountryCodes = {
+let countryCodes : CountryCodes = {
     korea: "ko",
     UnitedState :"us",
     UnitedKingdom: "uk"
@@ -290,7 +290,7 @@ type CountryNumberCodes = {
 열거형 타입은 자바스크립트에는 존재하지 않고 오직 타입스크립트에서만 사용할 수 있는 특별한 타입입니다.
 열거형은 다음과 같이 여러개의 값을 나열하는 용도로 사용합니다.
 ```ts   
-eunm Role {
+enum Role {
     ADMIN,
     USER,
     GUEST,
@@ -379,10 +379,10 @@ enum Role {
   GUEST,
 }
 
-const uer1 = {
+const user1 = {
     name:"김석진",
     role: Role.ADMIN, //0
-    language : Language.korea, // "ko"
+    language : Language.korean, // "ko"
 }
 
 ```

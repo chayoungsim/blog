@@ -21,7 +21,7 @@ npm init
 
 //@types/node 설치하기 : Node.js 내장 기능들의 타입 정보를 담고있는 @types/node 라는 패키지를 설치
 //@types/node가 성공적으로 설치되면 패키지의 node_modules 폴더에 @types 폴더가 생성됩니다. 
-npm i @type/node
+npm i @types/node
 
 //타입스크립트 컴파일러 설치하기
 npm i -g typescript
