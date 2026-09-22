@@ -7,7 +7,7 @@ description: "contextAPI, Redux, ToolKit, Zustand"
 ## Context API란?
 - Context 객체라는 것을 생성한다
 - 객체의 데이터 공유 범위와 공유할 데이터를 설정한다.
-```
+```tsx
 import { createContext, useContext } from "react";
 const MyContext = createContext(defaultValue);
 ```
@@ -29,15 +29,13 @@ function MyComponent() {
 }
 ```
 
-## Redux Toolkit(RTK)
+## Redux Toolkit (RTK)
 - Redux의 복잡한 설정과 보일러플레이트 코드를 줄이기 위해 만들어진 Redux의 상위 래퍼 라이브러리
 - 패키지 설치해서 사용 [https://redux-toolkit.js.org/](https://redux-toolkit.js.org/)
-
 
 ```tsx
 //redux-toolkit 설치
 npm install @reduxjs/toolkit react-redux
-
 
 // redux store 생성
 import { configureStore } from '@reduxjs/toolkit'
@@ -68,12 +66,13 @@ const useBearStore = create((set) => ({
 ```
 ### 미들웨어(middleware)
 - 스토어의 동작을 확장하거나 가로채서 제어할 수 있도록 도와주는 기능
-#### persist: 로컬스토리지(localStorage)에 상태를 저장
+#### persist
+- 로컬스토리지(localStorage)에 상태를 저장하는 미들웨어
 
 #### subscribeWithSelector
 - 특정 상태가 변경될 때를 감지해서 특정 로직을 수행할 수 있는 구독 기능을 사용할 수 있게 해주는 미들웨어
 
-### immer
+#### immer
 - 자동으로 불변성을 처리해주는 미들웨어
 - 상태를 직접 수정하는 것처럼 코드를 작성해도 내부적으로 불변성을 유지하면서 상태를 변경해주는 라이브러리
 ```tsx
@@ -88,6 +87,5 @@ const useStore = create(immer((set) => ({
     set((state) => {
       state.user.address.city = city
     }),
-}))) 
+})))
 ```
-### 
