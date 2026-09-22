@@ -6,7 +6,7 @@ description: "MCP(Model Context Protocol)로 Claude Code를 외부 도구에 연
 
 ## MCP(Model Context Protocol) 
 - MCP를 통해 Claude Code를 도구에 연결하기
-- MCP는 다른 프로그램들과 소통을 할떄 어떻게 어떻게 하라는 정해놓은 규칙입니다.
+- MCP는 다른 프로그램들과 소통을 할 때 어떻게 하라는 정해놓은 규칙입니다.
 
 ### Context7 MCP Server
 [Context7 MCP Server](https://context7.com/)
