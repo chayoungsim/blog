@@ -22,7 +22,7 @@ AGENTS.md        → Yes    // AI 코딩 에이전트를 사용할 경우 특히
 ```
 - ESLint는 코드의 문제나 좋지 않은 패턴을 찾아주는 도구입니다.
 - src/를 사용해서 실제 애플리케이션 코드와 프로젝트 설정 파일을 분리하는 것이 깔끔합니다.
-- App Router를 새로운 라우터이며 Server Components 같은 새로운 React 기능을 지원하는 방식으로 설명하고 있습니다
+- App Router는 새로운 라우터이며 Server Components 같은 새로운 React 기능을 지원하는 방식으로 설명하고 있습니다
 - App Router에서는 폴더 구조 자체가 URL 구조가 됩니다.
 - TypeScript + ESLint + React Compiler + Tailwind + src + App Router + @/* + AGENTS.md (2026년)
 
@@ -30,5 +30,4 @@ AGENTS.md        → Yes    // AI 코딩 에이전트를 사용할 경우 특히
 - Nextjs Latest (16.3.4)
 - TypeScript
 - Tailwind
-- 
 

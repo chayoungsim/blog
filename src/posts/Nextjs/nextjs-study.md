@@ -6,7 +6,7 @@ description: "한 입 크기로 잘라먹는 Next.js 영상강의 정리. React�
 
 ## 한 입 크기로 잘라먹는 Nextjs 영상강의 
 
-- [예제코트 확인] (https://winterlood.notion.site/f1b93a3e78894147b98f10c0dbc34b8f?v=91b33efe41ce459f83cbaf1b5155b793)
+- [예제코드 확인](https://winterlood.notion.site/f1b93a3e78894147b98f10c0dbc34b8f?v=91b33efe41ce459f83cbaf1b5155b793)
 
 ### React.js(Library) 
 - 주도권을 개발자가 가짐 기능 구현을 원하는 방향으로 진행한다 쓰고싶은 도구, 쓰고 싶은 기술을 쓴다
@@ -14,7 +14,7 @@ description: "한 입 크기로 잘라먹는 Next.js 영상강의 정리. React�
 - 클라이언트 사이드 랜더링 CSR(Client Side Rendering) FCP(초기 접속 속도)가 느려진다.
 
 ### Next.js(Framework) 
-- 주도권을 Framework가 가진 프레임워크가 제공하는 기능을 이용하거나 허용하는 범위 내에서만 추가 도구 시용 가능
+- 주도권을 Framework가 가진 프레임워크가 제공하는 기능을 이용하거나 허용하는 범위 내에서만 추가 도구 사용 가능
 - 자유도가 낮다
 - 거의 모든 기능을 제공
 - React.js 확장판
@@ -22,10 +22,10 @@ description: "한 입 크기로 잘라먹는 Next.js 영상강의 정리. React�
 ### 사전 렌더링
 - 서버 사이드 렌더링 SSR (Server Side Rendering)
 - 빠른 FCP - TTI
-- 빠른페이지 이동
+- 빠른 페이지 이동
 
 ### database
-- [https://supabase.com/] (https://supabase.com/)
+- [https://supabase.com/](https://supabase.com/)
 
 ### Page Router 핵심정리
 - Pages/ 폴더의 구조를 기반으로 페이지 라우팅을 제공함
@@ -104,7 +104,7 @@ export default function handler(
 export default function Page() {
     const [state, setState] = useState();
 
-    cosnt fetchData = async () => {
+    const fetchData = async () => {
         const response = await fetch("...");
         const data = await response.json();
 
@@ -121,8 +121,8 @@ export default function Page() {
 }
 ```
 ### Next.js 다양한 사전 렌더링
-1. 서버사이트 렌더리(SSR) - Server Site Rendering
-- 가장 기본적이 사전 렌더링방식
+1. 서버 사이드 렌더링(SSR) - Server Side Rendering
+- 가장 기본적인 사전 렌더링 방식
 - 요청이 들어올 때 마다 사전 렌더링을 진행 함
 
 
@@ -134,7 +134,7 @@ export default function Page() {
 - fallback 옵션 설정 (없는 경로로 요청시)
 -- false : 404 Not Found반환
 -- blocking : 즉시 생성(Like SSR)
--- true :  즉시생성 + 페이지만 미리반환
+-- true :  즉시 생성 + 페이지만 미리 반환
 
 3. 증분 정적 재 생성(ISR) - Incremental Static Regeneration (추천)
 - 단순히 그냥 SSG 방식으로 생성된 정적 페이지를 일정 시간을 주기로 다시 생성하는 기술임
